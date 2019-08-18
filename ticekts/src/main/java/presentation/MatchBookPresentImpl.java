@@ -34,6 +34,36 @@ public class MatchBookPresentImpl implements MatchBookPresent {
 			break;
 			
 		case 2:
+			if( MatchBookHelper.validateUser())
+			{
+				System.out.println("you are logged in");
+				System.out.println("/n /n");
+				System.out.println("1: BOOK TICKET");
+				System.out.println("2: CANCEL TICKET");
+				System.out.println("2: Log-out");
+				
+				
+				switch(sc.nextInt()){
+				
+				case 1:
+					System.out.println("Book your tickets");
+					break;
+					
+				case 2:
+					System.out.println("cancel your tickets");
+					break;
+					
+				case 3:
+					break;
+					
+				default:
+					System.out.println("Invalid Choice");	
+				}
+				
+			}
+			else {
+				System.out.println("wrong credentials");
+			}
 			break;
 		
 		case 3:

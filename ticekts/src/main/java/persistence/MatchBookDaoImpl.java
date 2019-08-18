@@ -45,5 +45,29 @@ public class MatchBookDaoImpl implements MatchBookDao {
 		}
 		return true;
 	}
+	
+	public USER searchUser(String mail) {
+		Session session = null;
+		Transaction tr = null;
+		USER user=null;
+		try {
+			session = factory.openSession();
+			tr = session.beginTransaction();
+
+			user=session.get(USER.class, mail);
+			
+		
+			tr.commit();
+
+		} catch (Exception ex) {
+			tr.rollback();
+			return null;
+		} finally {
+			session.close();
+		}
+		return user;
+	}
+	
+	
 
 }

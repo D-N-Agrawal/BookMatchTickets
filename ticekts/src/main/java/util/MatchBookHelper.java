@@ -2,6 +2,8 @@ package com.matchBook.util;
 
 import java.util.Scanner;
 
+import com.matchBook.business.MatchBookBL;
+import com.matchBook.business.MatchBookBLimpl;
 import com.matchBook.entity.USER;
 
 public class MatchBookHelper {
@@ -21,5 +23,15 @@ public class MatchBookHelper {
 	
 	return user;
 	
+	}
+	
+	static public boolean validateUser() {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter your mail id :");
+		String mail=sc.next();
+		System.out.println("enter your password :");
+		String password=sc.next();
+	    MatchBookBL matchBookBL = new MatchBookBLimpl();
+		return matchBookBL.validate(mail, password);	
 	}
 }

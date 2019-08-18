@@ -12,4 +12,12 @@ public class MatchBookBLimpl implements MatchBookBL {
 		return matchBookDao.insertUser(user);
 	}
 
+	public boolean validate(String mail, String password) {
+		 USER user = matchBookDao.searchUser(mail);
+		 System.out.println(user.getMail() + user.getPassword());
+		 if( user.getPassword().equals(password)) {
+			 return true;
+		 }
+		 else  return false;
+	}
 }
