@@ -1,5 +1,7 @@
 package com.matchBook.business;
 
-public interface MatchBookBL {
+import com.matchBook.entity.USER;
 
+public interface MatchBookBL {
+	public boolean addUser(USER user);
 }
